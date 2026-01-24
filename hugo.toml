@@ -5,7 +5,10 @@ theme = 'PaperMod'
 
 [params]
   defaultTheme = 'auto'
-  
+  [params.assets]
+    disableHLJS = false
+  mermaid = true
+
   # PROFILE MODE: The digital business card look
   [params.profileMode]
     enabled = true
