@@ -39,11 +39,11 @@ theme = 'PaperMod'
 [menu]
   [[menu.main]]
     identifier = "about"
-    name = " detailed Resume"
+    name = "Detailed Resume"
     url = "/about/"
     weight = 10
   [[menu.main]]
     identifier = "skills"
     name = "Skills"
-    url = "/#skills"
+    url = "/skills/"   # <--- FIXED: Now points to the new page
     weight = 20
