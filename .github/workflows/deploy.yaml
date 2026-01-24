@@ -29,7 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.121.2 # Pin your version for reproducibility (DevOps best practice)
+      HUGO_VERSION: 0.146.0 # Pin your version for reproducibility (DevOps best practice)
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
