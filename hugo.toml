@@ -11,8 +11,7 @@ theme = 'PaperMod'
     enabled = true
     title = "Asif Iqbal"
     subtitle = "Senior DevOps Engineer @ Dell Technologies | Ex-TCS | SRE | Cloud"
-    # Used your summary from the PDF 
-    bio = "IT professional with over 8+ years of experience specializing in DevOps, Cloud Technologies, and Architecture Design across AWS and Azure." 
+    bio = "Senior DevOps Engineer with 9+ years of experience specializing in Cloud Architecture (AWS/Azure), Kubernetes, and Infrastructure Automation."
     imageUrl = "https://github.com/im-asif.png" # Automatically pulls your GitHub profile pic
     imageTitle = "Asif Iqbal"
     imageWidth = 150
