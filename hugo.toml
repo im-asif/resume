@@ -50,3 +50,9 @@ theme = 'PaperMod'
     name = "Skills"
     url = "/skills/"   # <--- FIXED: Now points to the new page
     weight = 20
+
+  [[menu.main]]
+      identifier = "architecture"
+      name = "Architecture"
+      url = "/projects/architecture/"
+      weight = 30
