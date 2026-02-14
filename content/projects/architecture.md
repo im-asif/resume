@@ -11,6 +11,7 @@ As a Senior DevOps Engineer, I design systems that prioritize **scalability**, *
 ---
 
 ## 1. GitOps CI/CD Pipeline
+
 This workflow demonstrates the automation strategy I implemented at Dell Technologies, achieving a **50% reduction in deployment time**. It ensures that the state of the cluster always matches the Git repository.
 
 ```mermaid
@@ -40,6 +41,7 @@ flowchart LR
 ```
 
 ## 2. High-Availability Deployment Topology
+
 This topology illustrates a multi-AZ Kubernetes deployment with load balancing and replicated data services for resilience.
 
 ```mermaid
@@ -70,6 +72,7 @@ graph TD
 ```
 
 ## 3. Monitoring and Alerting Sequence
+
 This sequence shows how telemetry is collected, evaluated, and routed to on-call responders for fast remediation.
 
 ```mermaid
