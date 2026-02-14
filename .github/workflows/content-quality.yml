@@ -3,8 +3,6 @@ name: Content Quality
 on:
   pull_request:
   push:
-    branches:
-      - main
 
 jobs:
   validate-content:
@@ -14,13 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Markdown lint
-        run: npx --yes markdownlint-cli '**/*.md'
+        uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: |
+            **/*.md
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -39,6 +35,6 @@ jobs:
             --verbose
             --no-progress
             --accept 200,206,429
-            '**/*.md'
+            **/*.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
