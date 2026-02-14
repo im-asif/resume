@@ -1,0 +1,44 @@
+name: Content Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Markdown lint
+        run: npx --yes markdownlint-cli '**/*.md'
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Strict Hugo build
+        run: hugo --panicOnWarning
+
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: >-
+            --verbose
+            --no-progress
+            --accept 200,206,429
+            '**/*.md'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

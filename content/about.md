@@ -58,4 +58,4 @@ Shivaji University | *2016*
 ## Certifications
 * **AWS Solution Architect** (Ongoing)
 * **ITIL Foundation** - PeopleCert (2017)
-* **Linux Certification** - Tweny19 (2016)
+* **Linux Certification** - Twenty19 (2016)

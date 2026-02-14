@@ -10,7 +10,7 @@ As a Senior DevOps Engineer, I design systems that prioritize **scalability**, *
 
 ---
 
-## 1. The "GitOps" CI/CD Pipeline
+## 1. GitOps CI/CD Pipeline
 This workflow demonstrates the automation strategy I implemented at Dell Technologies, achieving a **50% reduction in deployment time**. It ensures that the state of the cluster always matches the Git repository.
 
 ```mermaid
@@ -37,14 +37,19 @@ flowchart LR
 
     classDef tools fill:#f9f,stroke:#333,stroke-width:2px;
     class Jenkins,Docker,ArgoCD,Registry tools;
+```
 
+## 2. High-Availability Deployment Topology
+This topology illustrates a multi-AZ Kubernetes deployment with load balancing and replicated data services for resilience.
+
+```mermaid
 graph TD
     User((End User)) -->|HTTPS| ALB[AWS Application Load Balancer]
 
     subgraph VPC [AWS VPC]
         ALB -->|Route Traffic| Node1
         ALB -->|Route Traffic| Node2
-        
+
         subgraph AZ1 [Availability Zone 1]
             Node1[Worker Node A] --> PodA[App Replica 1]
         end
@@ -58,11 +63,16 @@ graph TD
     end
 
     DB_Master -.->|Async Replication| DB_Replica
-    
+
     style ALB fill:#ff9900,stroke:#333
     style DB_Master fill:#336699,stroke:#333,color:white
     style DB_Replica fill:#336699,stroke:#333,color:white
+```
 
+## 3. Monitoring and Alerting Sequence
+This sequence shows how telemetry is collected, evaluated, and routed to on-call responders for fast remediation.
+
+```mermaid
 sequenceDiagram
     participant App as Application (K8s)
     participant Prom as Prometheus
@@ -76,7 +86,7 @@ sequenceDiagram
     end
 
     Prom->>Prom: Evaluate Rules
-    
+
     alt Threshold Breached
         Prom->>Alert: Trigger Alert (High Error Rate)
         Alert->>SRE: Send PagerDuty/Slack Notification
@@ -85,3 +95,4 @@ sequenceDiagram
     SRE->>Graf: View Dashboard
     Graf->>Prom: Query Historical Data
     SRE->>App: Initiate Fix (Scale Up/Rollback)
+```

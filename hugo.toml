@@ -9,18 +9,17 @@ theme = 'PaperMod'
     disableHLJS = false
   mermaid = true
 
-  # PROFILE MODE: The digital business card look
+  # Profile card settings shown on the homepage.
   [params.profileMode]
     enabled = true
     title = "Asif Iqbal"
     subtitle = "Senior DevOps Engineer @ Dell Technologies | Ex-TCS | SRE | Cloud"
     bio = "Senior DevOps Engineer with 9+ years of experience specializing in Cloud Architecture (AWS/Azure), Kubernetes, and Infrastructure Automation."
-    imageUrl = "https://github.com/im-asif.png" # Automatically pulls your GitHub profile pic
+    imageUrl = "https://github.com/im-asif.png"
     imageTitle = "Asif Iqbal"
     imageWidth = 150
     imageHeight = 150
 
-    # Social Links extracted from your PDF [cite: 2, 3]
     [[params.profileMode.buttons]]
       name = "LinkedIn"
       url = "https://www.linkedin.com/in/im-asif"
@@ -31,7 +30,7 @@ theme = 'PaperMod'
       name = "GitHub"
       url = "https://github.com/im-asif"
 
-  # SOCIAL ICONS (Footer)
+  # Footer social links.
   [[params.socialIcons]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/im-asif"
@@ -48,7 +47,7 @@ theme = 'PaperMod'
   [[menu.main]]
     identifier = "skills"
     name = "Skills"
-    url = "/skills/"   # <--- FIXED: Now points to the new page
+    url = "/skills/"
     weight = 20
 
   [[menu.main]]
